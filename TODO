@@ -1,0 +1,24 @@
+TODO
+====
+
+ - show/hide child windows upon tag switch, in theory this should already
+   work but in practice we need to tweak ismanageable() so that it
+   recognises child windows but doesn't generate false positives.
+ - fullscreen windows, mstsc for example doesn't resize properly when
+   maximized.
+ - Screensaver?
+ - system dialogs from desktop window
+ - urgent flag?
+ - window border isn't yet perfect
+ - status text via stdin or a separate tool
+ - crash handler which makes all windows visible restores borders etc
+ - use BeginDeferWindowPos, DeferWindowPos and EndDeferWindowPos
+ - optimize for speed
+ - code cleanups all over the place
+ - multi head support?
+
+ [ - introduce a CBTProc function and register it with
+     SetWindowsHookEx(WH_CBT, ...) to handle window events instead of the
+     current mechanism in WndProc which is based on the shellhookid and 
+     WH_SHELL because this only works for toplevel windows. See also the
+     "How it works" section. ]
